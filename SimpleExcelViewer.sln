@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.MVC", "Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Domain", "SimpleExcelViewer.Domain\SimpleExcelViewer.Domain.csproj", "{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Utils", "SimpleExcelViewer.Utils\SimpleExcelViewer.Utils.csproj", "{52E5D42A-9658-4763-BF20-D13E6DF90C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Infrastructure", "SimpleExcelViewer.Infrastructure\SimpleExcelViewer.Infrastructure.csproj", "{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E5D42A-9658-4763-BF20-D13E6DF90C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E5D42A-9658-4763-BF20-D13E6DF90C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E5D42A-9658-4763-BF20-D13E6DF90C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E5D42A-9658-4763-BF20-D13E6DF90C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
