@@ -1,4 +1,5 @@
-﻿using SimpleExcelViewer.Domain.Models;
+﻿using SimpleExcelViewer.Domain.Data;
+using SimpleExcelViewer.Domain.Models;
 using System;
 
 namespace SimpleExcelViewer.Domain.Repositories
@@ -10,23 +11,39 @@ namespace SimpleExcelViewer.Domain.Repositories
     /// <typeparam name="TId"><see cref="T.Id"/></typeparam>
     public abstract class BaseRepository<T, TId> : IRepository<T, TId> where T : class, IModel<TId>
     {
-        public BaseRepository()
+		private readonly IDataSet<T> _dataSet;
+
+		protected IDataSet<T> DataSet { get => _dataSet; }
+
+        public BaseRepository(IDataSet<T> dataSet)
         {
+			_dataSet = dataSet;
         }
 
         public T DeletedById(TId id)
         {
-            throw new NotImplementedException();
+			var entity = GetById(id);
+			_dataSet.Remove(entity);
+			_dataSet.GetDataContext().SaveChanges();
+			return entity;
         }
 
         public T GetById(TId id)
         {
-            throw new NotImplementedException();
+			var entity = _dataSet.Find(id);
+			if (entity == null)
+			{
+				throw new Exception($"Entity with id = {id} was not found");
+			}
+
+			return entity;
         }
 
         public T Put(T newEntity)
         {
-            throw new NotImplementedException();
+			_dataSet.Add(newEntity);
+			_dataSet.GetDataContext().SaveChanges();
+			return newEntity;
         }
 
         public T Update(T entity)
