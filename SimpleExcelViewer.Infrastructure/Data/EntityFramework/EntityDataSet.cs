@@ -105,5 +105,10 @@ namespace SimpleExcelViewer.Infrastructure.Data.EntityFramework
 		{
 			return _context;
 		}
+
+		public Task<TEntity> AddAsync(TEntity entity)
+		{
+			return Task.FromResult(Add(entity));
+		}
 	}
 }

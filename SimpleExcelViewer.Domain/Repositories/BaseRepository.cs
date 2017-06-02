@@ -1,6 +1,8 @@
 ﻿using SimpleExcelViewer.Domain.Data;
 using SimpleExcelViewer.Domain.Models;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SimpleExcelViewer.Domain.Repositories
 {
@@ -50,5 +52,15 @@ namespace SimpleExcelViewer.Domain.Repositories
         {
             throw new NotImplementedException();
         }
-    }
+
+		public async Task BulkAddAsync(ICollection<T> entities)
+		{
+			foreach(var entity in entities)
+			{
+				await _dataSet.AddAsync(entity);
+			}
+
+			await _dataSet.GetDataContext().SaveChangesAsync();
+		}
+	}
 }
