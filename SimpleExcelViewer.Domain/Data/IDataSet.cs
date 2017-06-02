@@ -20,6 +20,13 @@ namespace SimpleExcelViewer.Domain.Data
 		T Add(T entity);
 
 		/// <summary>
+		/// Adds entity to the set asyncronously
+		/// </summary>
+		/// <param name="entity">The entity to add.</param>
+		/// <returns>The entity.</returns>
+		Task<T> AddAsync(T entity);
+
+		/// <summary>
 		/// Removes entity from the set.
 		/// </summary>
 		/// <param name="entity">The entity to remove.</param>

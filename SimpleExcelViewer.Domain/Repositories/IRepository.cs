@@ -1,4 +1,7 @@
 ﻿using SimpleExcelViewer.Domain.Models;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SimpleExcelViewer.Domain.Repositories
 {
@@ -34,5 +37,12 @@ namespace SimpleExcelViewer.Domain.Repositories
         /// <param name="entity"><see cref="T"/> entity to update</param>
         /// <returns>Updates <see cref="T"/> entity</returns>
         T Update(T entity);
+
+		/// <summary>
+		/// Inserts collection of <see cref="T"/> entities to data store
+		/// </summary>
+		/// <param name="entities">Collection of <see cref="T"/> entities</param>
+		/// <returns></returns>
+		Task BulkAddAsync(ICollection<T> entities);
     }
 }

@@ -36,6 +36,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -50,14 +56,23 @@
     <Compile Include="Data\EntityFramework\BaseEntityDataContext.cs" />
     <Compile Include="Data\EntityFramework\EntityDataContext.cs" />
     <Compile Include="Data\EntityFramework\EntityDataSet.cs" />
-    <Compile Include="IEntityDataContext.cs" />
+    <Compile Include="Data\IEntityDataContext.cs" />
+    <Compile Include="InfrastructureInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Data\ImportToDataStoreService.cs" />
+    <Compile Include="Services\Data\IImportToDataStoreService.cs" />
+    <Compile Include="Services\Excel\ExcelReaderService.cs" />
+    <Compile Include="Services\Excel\IExcelReaderService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SimpleExcelViewer.Domain\SimpleExcelViewer.Domain.csproj">
       <Project>{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}</Project>
       <Name>SimpleExcelViewer.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleExcelViewer.Utils\SimpleExcelViewer.Utils.csproj">
+      <Project>{52E5D42A-9658-4763-BF20-D13E6DF90C88}</Project>
+      <Name>SimpleExcelViewer.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

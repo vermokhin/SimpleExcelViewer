@@ -1,7 +1,7 @@
 ﻿using SimpleExcelViewer.Domain.Data;
 using SimpleExcelViewer.Domain.Models;
 
-namespace SimpleExcelViewer.Infrastructure
+namespace SimpleExcelViewer.Infrastructure.Data
 {
 	/// <summary>
 	/// Represent core application data context
