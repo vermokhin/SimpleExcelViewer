@@ -1,5 +1,6 @@
 ﻿using SimpleExcelViewer.Domain.Models;
 using SimpleExcelViewer.Domain.Repositories;
+using SimpleExcelViewer.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,17 +12,26 @@ namespace SimpleExcelViewer.Infrastructure.Services.Data
 	{
 		private readonly IOfficeRepository _officeRepo;
 		private readonly IManagerRepository _managerRepository;
+		private readonly IEntityDataContext _context;
 
-		public ImportToDataStoreService(IOfficeRepository officeRepo, IManagerRepository managerRepo)
+		public ImportToDataStoreService(IOfficeRepository officeRepo, IManagerRepository managerRepo, IEntityDataContext context)
 		{
 			_officeRepo = officeRepo;
 			_managerRepository = managerRepo;
+			_context = context;
+		}
+
+		private void ClearDataStore()
+		{
+			_context.Managers.Clear();
+			_context.Offices.Clear();
 		}
 
 		public async Task ImportFromDataSet(DataSet dataSet)
 		{
 			try
 			{
+				ClearDataStore();
 				foreach (var table in dataSet.Tables)
 				{
 					var dataTable = table as DataTable;
@@ -48,7 +58,7 @@ namespace SimpleExcelViewer.Infrastructure.Services.Data
 				{
 					officeList.Add(new Office()
 					{
-						Id = Convert.ToInt64((row as DataRow)[0]),
+						Id = Convert.ToInt32((row as DataRow)[0]),
 						Name = (row as DataRow)[1].ToString()
 					});
 				}
@@ -67,9 +77,9 @@ namespace SimpleExcelViewer.Infrastructure.Services.Data
 				{
 					managersList.Add(new Manager()
 					{
-						Id = Convert.ToInt64((row as DataRow)[0]),
+						Id = Convert.ToInt32((row as DataRow)[0]),
 						Name = (row as DataRow)[1].ToString(),
-						OfficeId = Convert.ToInt64((row as DataRow)[2])
+						Office_Id = Convert.ToInt32((row as DataRow)[2])
 					});
 				}
 				await _managerRepository.BulkAddAsync(managersList);

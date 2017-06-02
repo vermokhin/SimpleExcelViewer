@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Utils", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Infrastructure", "SimpleExcelViewer.Infrastructure\SimpleExcelViewer.Infrastructure.csproj", "{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelViewer.Logic", "SimpleExcelViewer.Logic\SimpleExcelViewer.Logic.csproj", "{A9C60633-0B8F-4B7A-86EE-E54EDBBB739C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C60633-0B8F-4B7A-86EE-E54EDBBB739C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C60633-0B8F-4B7A-86EE-E54EDBBB739C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C60633-0B8F-4B7A-86EE-E54EDBBB739C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C60633-0B8F-4B7A-86EE-E54EDBBB739C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
