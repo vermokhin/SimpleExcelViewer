@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Omu.AwesomeMvc;
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -13,22 +14,43 @@
 
 			<input type="submit" />
 		</form>
+    </div>
 
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-8">
+        <h2>Click on office id office to see managers</h2>
+		@(Html.Awe().Grid("OfficesGrid")
+		.Groupable(true)
+		.Resizable(true)
+		.Url(Url.Action("GetOfficesForGrid", "Home"))
+		.Columns(
+				new Column { ClientFormat = "<div class='detailbtn'><i class='ui-icon ui-icon-triangle-1-e awe-il'></i> .Id</div>", Width = 100, Header = "Id" },
+				new Column { Bind = "Name" })
+		.Nests(new Nest
+		{
+			ButtonClass = "detailbtn",
+			Url = Url.Action("ManagerGrid", "Home"),
+			LoadOnce = true
+		}))
+
+
+		<style>
+			.detailbtn {
+				vertical-align: middle;
+				border: none;
+				background-color: transparent;
+				outline: none;
+				cursor: pointer;
+				margin-left: -5px;
+				padding-left: 5px;
+			}
+
+				.detailbtn .ui-icon {
+					vertical-align: middle;
+				}
+
+				.detailbtn.awe-on i {
+					background-position: -48px -16px;
+				}
+		</style>
     </div>
 </div>

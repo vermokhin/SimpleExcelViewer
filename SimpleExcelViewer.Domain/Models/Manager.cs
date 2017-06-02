@@ -3,15 +3,15 @@
 	/// <summary>
 	/// Manager domain model
 	/// </summary>
-	public class Manager : IModel<long>
+	public class Manager : IModel<int>
 	{
-		public long Id { get; set; }
+		public int Id { get; set; }
 
 		public string Name { get; set; }
 
 		/// <summary>
 		/// <see cref="Office.Id"/>
 		/// </summary>
-		public long OfficeId { get; set; }
+		public int Office_Id { get; set; }
 	}
 }

@@ -3,6 +3,7 @@ using SimpleExcelViewer.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace SimpleExcelViewer.Domain.Repositories
 {
@@ -61,6 +62,11 @@ namespace SimpleExcelViewer.Domain.Repositories
 			}
 
 			await _dataSet.GetDataContext().SaveChangesAsync();
+		}
+
+		public IQueryable<T> GetAll()
+		{
+			return _dataSet.AsQueryable();
 		}
 	}
 }

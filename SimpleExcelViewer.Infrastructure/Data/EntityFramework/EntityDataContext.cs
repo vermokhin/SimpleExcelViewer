@@ -32,11 +32,11 @@ namespace SimpleExcelViewer.Infrastructure.Data.EntityFramework
 
 			modelBuilder.Entity<Manager>().ToTable("Managers");
 			modelBuilder.Entity<Manager>().HasKey(m => m.Id);
-			modelBuilder.Entity<Manager>().Property(m => m.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+			modelBuilder.Entity<Manager>().Property(m => m.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
 			modelBuilder.Entity<Office>().ToTable("Offices");
 			modelBuilder.Entity<Office>().HasKey(o => o.Id);
-			modelBuilder.Entity<Office>().Property(o => o.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+			modelBuilder.Entity<Office>().Property(o => o.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 		}
 	}
 }

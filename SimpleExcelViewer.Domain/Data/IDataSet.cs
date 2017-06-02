@@ -34,6 +34,12 @@ namespace SimpleExcelViewer.Domain.Data
 		T Remove(T entity);
 
 		/// <summary>
+		/// Removes all entities from data set
+		/// </summary>
+		/// <returns></returns>
+		IQueryable<T> Clear();
+
+		/// <summary>
 		/// Finds entity in the set with specified key.
 		/// </summary>
 		/// <param name="keyValues">The values of key for the entity to be found.</param>

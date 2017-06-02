@@ -3,9 +3,9 @@
 	/// <summary>
 	/// Office domain model
 	/// </summary>
-	public class Office : IModel<long>
+	public class Office : IModel<int>
 	{
-		public long Id { get; set; }
+		public int Id { get; set; }
 
 		public string Name { get; set; }
 	}

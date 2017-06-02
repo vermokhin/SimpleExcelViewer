@@ -1,6 +1,7 @@
 ﻿using SimpleExcelViewer.Domain.Models;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SimpleExcelViewer.Domain.Repositories
@@ -10,6 +11,12 @@ namespace SimpleExcelViewer.Domain.Repositories
     /// </summary>
     public interface IRepository<T, TId> where T : class, IModel<TId>
     {
+		/// <summary>
+		/// Returns all existing entities from data store
+		/// </summary>
+		/// <returns></returns>
+		IQueryable<T> GetAll();
+
         /// <summary>
         /// Returns existing entity from data store by <paramref name="id"/>
         /// </summary>

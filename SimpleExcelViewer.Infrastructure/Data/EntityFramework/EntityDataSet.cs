@@ -110,5 +110,13 @@ namespace SimpleExcelViewer.Infrastructure.Data.EntityFramework
 		{
 			return Task.FromResult(Add(entity));
 		}
+
+		public IQueryable<TEntity> Clear()
+		{
+			_dbSet.RemoveRange(_dbSet);
+			GetDataContext().SaveChanges();
+
+			return _dbSet;
+		}
 	}
 }

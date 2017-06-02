@@ -201,6 +201,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Managers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -221,6 +222,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleExcelViewer.Domain\SimpleExcelViewer.Domain.csproj">
+      <Project>{97D6ED8B-4F4C-4FA1-9B05-6D3902CA7E4F}</Project>
+      <Name>SimpleExcelViewer.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleExcelViewer.Infrastructure\SimpleExcelViewer.Infrastructure.csproj">
       <Project>{4C54F8C5-B44F-4CEA-B3A2-5FE41DD645D7}</Project>
       <Name>SimpleExcelViewer.Infrastructure</Name>
